@@ -1,10 +1,12 @@
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 
-from rag.config import EMBEDDING_MODEL, GOOGLE_API_KEY
+from rag.config import EMBEDDING_MODEL, LMSTUDIO_BASE_URL
 
 
-def get_embeddings() -> GoogleGenerativeAIEmbeddings:
-    return GoogleGenerativeAIEmbeddings(
+def get_embeddings() -> OpenAIEmbeddings:
+    return OpenAIEmbeddings(
         model=EMBEDDING_MODEL,
-        google_api_key=GOOGLE_API_KEY,
+        base_url=LMSTUDIO_BASE_URL,
+        api_key="lm-studio",
+        check_embedding_ctx_length=False,
     )

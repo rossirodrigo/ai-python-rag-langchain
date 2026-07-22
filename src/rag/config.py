@@ -12,8 +12,15 @@ CHROMA_DIR = DATA_DIR / "chroma_db"
 
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 
-EMBEDDING_MODEL = "models/gemini-embedding-001"
 CHAT_MODEL = "gemini-flash-lite-latest"
+
+# Embeddings run locally via LM Studio's OpenAI-compatible server.
+# Load "text-embedding-embeddinggemma-300m" (Google's EmbeddingGemma) in LM Studio
+# and start its local server before running ingest/chat.
+LMSTUDIO_BASE_URL = os.environ.get("LMSTUDIO_BASE_URL", "http://localhost:1234/v1")
+EMBEDDING_MODEL = os.environ.get(
+    "EMBEDDING_MODEL", "text-embedding-embeddinggemma-300m"
+)
 
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 150
