@@ -26,7 +26,12 @@ def main() -> None:
         if not question:
             continue
 
-        result = rag_chain.invoke({"input": question, "chat_history": chat_history})
+        try:
+            result = rag_chain.invoke({"input": question, "chat_history": chat_history})
+        except Exception as exc:
+            print(f"\nAssistant: Sorry, something went wrong answering that ({exc}). Please try again.")
+            continue
+
         answer = result["answer"]
         print(f"\nAssistant: {answer}")
 

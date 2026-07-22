@@ -13,7 +13,7 @@ CHROMA_DIR = DATA_DIR / "chroma_db"
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 
 EMBEDDING_MODEL = "models/gemini-embedding-001"
-CHAT_MODEL = "gemini-2.5-flash"
+CHAT_MODEL = "gemini-flash-lite-latest"
 
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 150
