@@ -1,0 +1,18 @@
+[project]
+name = "rag-gemini-langchain"
+version = "0.1.0"
+description = "RAG integration with Google Gemini using LangChain"
+readme = "readme.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain",
+    "langchain-community",
+    "langchain-chroma",
+    "langchain-google-genai",
+    "chromadb",
+    "pypdf",
+    "python-dotenv",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
